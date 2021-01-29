@@ -7,6 +7,8 @@
 акцент сёрый #757575
 фон чем мы занимаемся #E5E5E5
 цвет кнопок портфолио #f5f4fa
+цвет иконок соцсетей #AFB1B8
+
 */
 /*переменные*/
 :root {
@@ -15,11 +17,13 @@
   --secondary-text-color: #212121;
   --secondary-accent-color: #757575;
   --primary-white-color: #ffffff;
-  --hero-footer-background-color: #2f303a;
+  --hero-background-color: #c4c4c4;
   --portfolio-button-bgc: #f5f4fa;
   --primary-bgc-color: #e5e5e5;
   --card-description-border-color: #eeeeee;
   --header-border-color: #ececec;
+  --bg-footer-color: #2f303a;
+  --social-icon-color: #afb1b8;
 }
 body {
   background-color: var(--primary-white-color);
@@ -130,11 +134,14 @@ ol {
 .auth-nav .item + .item {
   margin-left: 50px;
 }
+
 /* .auth-nav .item:not(:last-child){
     margin-right: 50px;
 } */
+
 .auth-nav .link {
-  display: block;
+  display: flex;
+  align-items: center;
   padding-top: 32px;
   padding-bottom: 32px;
 
@@ -143,6 +150,12 @@ ol {
   font-size: 14px;
   line-height: 1.14;
   text-decoration: none;
+}
+
+.contacts-icon {
+  display: block;
+  fill: currentColor;
+  margin-right: 10px;
 }
 .auth-nav .link:hover,
 .auth-nav .link:focus {
@@ -153,7 +166,18 @@ ol {
   padding-top: 200px;
   padding-bottom: 200px;
 
-  background-color: var(--hero-footer-background-color);
+  background-color: var(--hero-background-color);
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/hero/hero-img-optimized.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  max-width: 1600px;
+  max-height: 600px;
   text-align: center;
 }
 .main-header {
@@ -217,6 +241,44 @@ ol {
   width: 270px;
 }
 
+.features-svg {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 270px;
+  height: 120px;
+  background-color: var(--portfolio-button-bgc);
+  margin-bottom: 30px;
+}
+.features-icon {
+  width: 89px;
+  height: 52px;
+  fill: currentColor;
+}
+
+/* .features-list .item::before {
+  display: block;
+  content: '';
+  height: 120px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--portfolio-button-bgc);
+  margin-bottom: 30px;
+}
+.icon-antenna::before {
+  background-image: url(../images/svg/featers-icon/antenna.svg);
+}
+.icon-clock::before {
+  background-image: url(../images/svg/featers-icon/clock.svg);
+}
+.icon-diagram::before {
+  background-image: url(../images/svg/featers-icon/diagram.svg);
+}
+.icon-astronaut::before {
+  background-image: url(../images/svg/featers-icon/astronaut.svg);
+} */
+
 .features-list .item + .item {
   margin-left: 30px;
 }
@@ -264,13 +326,15 @@ ol {
   display: flex;
   margin-top: 50px;
 }
-.our-team-list .item + .item {
+.our-team-list > .item + .item {
   margin-left: 30px;
 }
 .our-team-card {
   width: 270px;
   border-radius: 0px 0px 4px 4px;
   background-color: var(--primary-white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .our-team-description {
   padding-top: 30px;
@@ -293,13 +357,89 @@ ol {
   line-height: 1.19;
   text-align: center;
 }
+.social-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+}
+.social-list .item + .item {
+  margin-left: 10px;
+}
+.social-list .link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--social-icon-color);
+}
+.social-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+.social-list .link:hover,
+.social-list .link:focus {
+  background-color: var(--primary-accent-color);
+  color: var(--primary-white-color);
+  fill: currentColor;
+}
+/* regular customers */
+.customers-title {
+  color: var(--secondary-text-color);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+}
+.customers-list {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.customers-list .item + .item {
+  margin-left: 30px;
+}
+.customers-list .link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 90px;
+  color: var(--social-icon-color);
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+}
+.customers-icon {
+  width: 89px;
+  height: 52px;
+  fill: currentColor;
+}
+.customers-list .link:hover,
+.customers-list .link:focus {
+  border-color: var(--primary-accent-color);
+  color: var(--primary-accent-color);
+  fill: currentColor;
+}
+
 /*footer*/
 .footer {
   padding-top: 60px;
   padding-bottom: 60px;
 
-  background-color: var(--hero-footer-background-color);
+  background-color: var(--bg-footer-color);
   font-style: normal;
+}
+.footer .container {
+  display: flex;
+  align-items: baseline;
+}
+.address-section {
+  margin-right: 70px;
 }
 .logo-footer {
   color: var(--primary-white-color);
@@ -334,6 +474,45 @@ ol {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
 }
+.join-title {
+  color: var(--primary-white-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.social-list-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+}
+.social-list-footer .item + .item {
+  margin-left: 10px;
+}
+.social-list-footer .link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--primary-white-color);
+}
+.social-icon-footer {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+.social-list-footer .link:hover,
+.social-list-footer .link:focus {
+  background-color: var(--primary-accent-color);
+  color: var(--primary-white-color);
+  fill: currentColor;
+}
+
 /*portfolio*/
 .portfolio-header {
   font-weight: 900;
@@ -396,6 +575,11 @@ ol {
 }
 .card {
   text-decoration: none;
+}
+.card-item:hover,
+.card-item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .card.title {
