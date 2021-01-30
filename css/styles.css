@@ -542,6 +542,7 @@ ol {
   line-height: 1.62;
   text-align: center;
   text-decoration: none;
+  cursor: pointer;
 }
 .nav-button:hover,
 .nav-button:focus,
